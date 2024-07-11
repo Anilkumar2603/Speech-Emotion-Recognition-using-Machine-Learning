@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+.bg-container{
+    background-image: url("https://watermark.lovepik.com/photo/50076/9023.jpg_wh1200.jpg");
+    background-size:cover ;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+}
+*{
+    margin:0px;
+}
+.h{
+    color:white;
+    font-family:"Bree Serif";
+    align-self:center;
+}
+input{
+    color:white;
+    
+}
+form{
+    display:flex;
+    flex-direction:column;
+   margin-left:20px;
+   margin-top:300px;
+}
+button{
+    width:120px;
+    background-color: #1338BE;
+    margin-top:20px;
+    border-radius:7px;
+    border-width:0px;
+    height:30px;
+    color:white;
+    border:1px solid white;
+    cursor: pointer;
+}
+
+    
+    
+::-webkit-file-upload-button{
+       width:120px;
+    background-color: #1338BE;
+    margin-top:20px;
+    border-radius:7px;
+    border-width:0px;
+    height:30px;
+    color:white;
+    border:1px solid white;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #088F8F;
+    color:black;
+}
+::-webkit-file-upload-button:hover{
+    background-color: #088F8F;
+    color:black;
+}
+#predictionResult{
+    color:white;
+    font-family: "Bree Serif";
+    margin-top:20px;
+}

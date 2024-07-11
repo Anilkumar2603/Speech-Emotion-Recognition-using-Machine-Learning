@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Emotion Recognition</title>
+    <script src="https://kit.fontawesome.com/20584ace88.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="bg-container">
+    <h1 class="h">Speech Emotion Recognition</h1>
+    <form id="uploadForm" enctype="multipart/form-data" >
+        <input type="file" class="chooseFile" id="audioFile" accept=".wav, .mp3" required>
+        <button type="submit">
+            <span><i class="fa-solid fa-upload"></i></span>
+            Upload Audio</button>
+    </form>
+    <div id="predictionResult"></div>
+     </div>
+     <script>
+        // Function to handle form submission
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            var formData = new FormData();
+            var fileInput = document.getElementById('audioFile');
+            formData.append('file', fileInput.files[0]); // Get the selected file
+            
+            // Play sound effect
+            document.getElementById('audioFeedback').play();
+
+            // Send POST request to Flask endpoint for prediction
+            fetch('/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Display prediction result
+                document.getElementById('predictionResult').innerHTML = 'Predicted Emotion: ' + data.predicted_class;
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
